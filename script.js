@@ -171,7 +171,7 @@ function checkWin(size) {
     }
     if (won) {
         stopTimer();
-        fetch(`http://localhost:3000/leaderboard?size=${size}`)
+        fetch(`https://puzzle-game-advanced.onrender.com/leaderboard?size=${size}`)
             .then(res => res.json())
             .then(data => {
                 const entry = data.find(e => e.name.toLowerCase() === playerName.toLowerCase());
@@ -375,7 +375,7 @@ document.getElementById('bu1').onclick = function () {
 function fetchLeaderboard() {
     const size = parseInt(gridSizeInput.value);
     leaderboardList.innerHTML = "Loading...";
-    fetch(`http://localhost:3000/leaderboard?size=${size}`)
+    fetch(`https://puzzle-game-advanced.onrender.com/leaderboard?size=${size}`)
         .then(res => res.json())
         .then(data => {
             if (!data.length) {
@@ -411,7 +411,7 @@ function fetchLeaderboard() {
 }
 
 function postLeaderboard(moves, time, timeSec, size) {
-    fetch('http://localhost:3000/leaderboard', {
+    fetch('https://puzzle-game-advanced.onrender.com/leaderboard', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: playerName, moves, time, timeSec, size })
@@ -425,7 +425,7 @@ function updatePlayerInfo() {
         playerNameDisplay.textContent = "";
         return;
     }
-    fetch(`http://localhost:3000/leaderboard?size=${size}`)
+    fetch(`https://puzzle-game-advanced.onrender.com/leaderboard?size=${size}`)
         .then(res => res.json())
         .then(data => {
             const entry = data.find(e => e.name.toLowerCase() === playerName.toLowerCase());
