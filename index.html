@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="animation-title">PUZZLE GAME</div>
+        <div class="subtitle">Arrange the tiles in order as fast as you can!</div>
+        <div class="ninputdiv">
+            <label for="gridSizeInput">Grid Size:</label>
+            <input id="gridSizeInput" class="input1" type="number" min="2" max="6" value="4" aria-label="Grid Size">
+            <button class="btninput1" id="leaderboard">Leaderboard</button>
+        </div>
+        <div class="container5">
+            <div class="player-info">
+                <span id="playerNameDisplay"></span>
+            </div>
+            <div class="status-row">
+                <span class="timer5">
+                    <span id="hr">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+                </span>
+                <span class="txt5" id="movecounter">0</span> Moves
+            </div>
+            <div id="buttons5">
+                <button class="btn5" id="start">Start</button>
+                <button class="btn5" id="pause" style="display:none;">Pause</button>
+                <button class="btn5" id="resume" style="display:none;">Resume</button>
+                <button class="btn5" id="reset" style="display:none;">Restart</button>
+                <button class="btn5" id="shuffle">Shuffle</button>
+            </div>
+        </div>
+        <div id="gridContainer" class="grid-container" aria-label="Puzzle Grid"></div>
+    </div>
+    <!-- Name Popup -->
+    <div class="popup" id="namePopup">
+        <span style="font-size:2vw;">Enter Your Name</span>
+        <input type="text" id="playerNameInput" maxlength="20" placeholder="Your name" style="font-size:1.5vw; margin:1vw 0; padding:0.5vw; border-radius:0.5vw; border:1px solid #ccc;">
+        <span id="nameWarning" style="color:#e11d48; font-size:1vw; display:none;">Please enter your name!</span>
+        <button id="nameSubmit" class="btn5" style="width:10vw;">OK</button>
+    </div>
+    <!-- Win Popup -->
+    <div class="popup" id="popup">
+        <span style="font-size:2vw;">🎉 You Win! 🎉</span>
+        <span id="mo"></span>
+        <span id="ti"></span>
+        <button id="bu">Play Again</button>
+    </div>
+    <!-- Leaderboard Popup -->
+    <div class="popup1" id="popup1">
+        <span style="font-size:2vw;">🏆 Leaderboard</span>
+        <div id="leaderboardList"></div>
+        <button id="bu1">Close</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
